@@ -1,0 +1,34 @@
+[build]
+  publish = "frontend/build"
+  functions = "functions"
+  command = "cd frontend && npm ci && npm run build"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/api/auth/signup/admin"
+  to = "/.netlify/functions/signup-admin"
+  status = 200
+
+[[redirects]]
+  from = "/api/auth/signup/owner"
+  to = "/.netlify/functions/signup-owner"
+  status = 200
+
+[[redirects]]
+  from = "/api/auth/signup/user"
+  to = "/.netlify/functions/signup-user"
+  status = 200
+
+[[redirects]]
+  from = "/api/auth/signin"
+  to = "/.netlify/functions/signin"
+  status = 200
+
+[[redirects]]
+  from = "/api/auth/signout"
+  to = "/.netlify/functions/signout"
+  status = 200
